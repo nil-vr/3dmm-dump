@@ -1,0 +1,29 @@
+[package]
+name = "threedeemm-dump"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "3dmm-dump"
+path = "src/main.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.70"
+bitflags = "2.0.2"
+bitvec = "1.0.1"
+byteorder = "1.4.3"
+embedded-graphics-core = "0.3.3"
+gltf = "1.1.0"
+lazy_static = "1.4.0"
+maplit = "1.0.2"
+memmap2 = "0.5.10"
+nalgebra = "0.32.2"
+png = "0.17.7"
+rayon = "1.7.0"
+rectangle-pack = "0.4.2"
+rgb = "0.8.36"
+serde_json = "1.0.94"
+tinybmp = "0.4.0"
+zerocopy = "0.6.1"
