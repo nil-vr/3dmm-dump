@@ -1,11 +1,9 @@
-use std::{
-    borrow::Cow, cmp::Ordering, collections::HashMap, ffi::OsString, fmt, mem,
-    os::windows::prelude::OsStringExt,
-};
+use std::{borrow::Cow, cmp::Ordering, collections::HashMap, fmt, mem};
 
 use anyhow::{bail, ensure, Context, Result};
 use bitflags::bitflags;
 use byteorder::{ByteOrder, NativeEndian, ReadBytesExt};
+use widestring::U16String;
 use zerocopy::{FromBytes, U16, U32};
 
 use crate::{kauai, order::Loader};
@@ -388,7 +386,7 @@ impl<'a> Loader<'a> for Group<'a> {
                         {
                             value.push(c);
                         }
-                        let Ok(value) = OsString::from_wide(&value).into_string() else {
+                        let Ok(value) = U16String::from_vec(value).to_string() else {
                             bail!("Invalid utf-16");
                         };
                         Cow::Owned(value)
