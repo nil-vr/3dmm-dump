@@ -737,7 +737,7 @@ fn pack_textures(name: &str, template: &mut TemplateData) -> Result<()> {
 }
 
 const PALETTE_BMP: &[u8] =
-    include_bytes!("../../3DMMForever/src/building/BITMAPS/PALETTE/SOCBASE.bmp");
+    include_bytes!("../../3DMMForever/src/building/bitmaps/palette/socbase.bmp");
 lazy_static! {
     static ref PALETTE: Vec<u8> = {
         let bmp = RawBmp::from_slice(PALETTE_BMP).unwrap();
